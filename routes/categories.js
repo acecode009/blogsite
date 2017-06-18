@@ -35,13 +35,14 @@ router.post('/add', function(req, res, next) {
     }
 
 });
+// render page category
 router.get('/:name', (req, res, next) => {
     var category = db.get('post')
     category.find({ 'category': req.params.name }, (err, data) => {
         if (err) {
             res.render('404')
         } else {
-            res.render('single', {
+            res.render('page', {
                 "data": data,
                 "title": req.params.name
             })
