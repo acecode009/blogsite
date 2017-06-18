@@ -5,31 +5,27 @@
 <div class="row">
   
   <div class="col-md-8 main">
-   {{#if data}}
-      {{#each data}}
+   {{#if post}}
+     
         <div class="post">
           
+         <div class="post-body">
          
-        <div class="post-body">
-         
-            <h2 class="blog-post-title"><a href="/post/show/{{_id}}">
+            <h2 class="blog-post-title">
               {{title}}
-            </a></h2>
+            </h2>
          
           <p class="blog-post-meta">
-            posted in <a href="/categories/{{category}}">{{category}} </a>
+            posted on
             {{#formatDate}}
               {{date}}
-            {{/formatDate}} by <a href="#">{{author}}</a></p>
-          <p>
-            {{#truncateText}}
-              {{{body}}}
-            {{/truncateText}}
+            {{/formatDate}} by <a href="#">{{author}}</a>
           </p>
-          <a href="/post/show/{{_id}}" class="btn btn-default readmore">Read More</a>
+          <p>{{{body}}}</p>
+          
         </div>
       </div>
-      {{/each}}
+     
       {{else}}
         <div class="well">
           <div class="row">
