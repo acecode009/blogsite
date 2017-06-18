@@ -86,12 +86,15 @@ router.post('/add', upload, function(req, res) {
 /* single post handler */
 router.get('/:id', function(req, res, next) {
     var posts = db.get('post')
+    console.log(req.params.id)
     posts.find({ '_id': req.params.id }, {}, (err, data) => {
         if (err) { throw err }
-        res.render('single-post', {
-            'post': data
+        res.render('single', {
+            'post': data,
+            'title': data[0].title
 
         });
+        console.log(data)
     })
 
 });

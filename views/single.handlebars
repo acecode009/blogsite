@@ -1,22 +1,19 @@
 <br>
 <div class="header">
-      <h1>{{title}} Archives </h1>
+      <h1>{{title}}  </h1>
   </div>
 <div class="row">
   
   <div class="col-md-8 main">
    {{#if post}}
+    {{#each post}}
      
         <div class="post">
-          
+          <img src="/images/uploads/{{imagename}}" alt="">
          <div class="post-body">
-         
-            <h2 class="blog-post-title">
-              {{title}}
-            </h2>
-         
+                            
           <p class="blog-post-meta">
-            posted on
+            Posted on
             {{#formatDate}}
               {{date}}
             {{/formatDate}} by <a href="#">{{author}}</a>
@@ -25,7 +22,7 @@
           
         </div>
       </div>
-     
+     {{/each}}
       {{else}}
         <div class="well">
           <div class="row">
