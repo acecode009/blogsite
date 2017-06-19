@@ -1,5 +1,6 @@
 const express = require('express'),
     path = require('path'),
+    favicon = require('express-favicon'),
     expressValidator = require('express-validator'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
@@ -40,7 +41,7 @@ app.set('view engine', 'handlebars');
 var uploads = multer({ dest: './public/images/uploads' })
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
