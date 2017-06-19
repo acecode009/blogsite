@@ -11,10 +11,8 @@ router.get('/add', function(req, res, next) {
     categories.find({}, {}, (err, data) => {
         res.render('addpost', {
             'categories': data
-
         });
     })
-
 });
 //var uploads = multer({ dest: './public/images/uploads' })
 var storage = multer.diskStorage({
