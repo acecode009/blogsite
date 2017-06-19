@@ -94,7 +94,7 @@ router.get('/:id', function(req, res, next) {
             'title': data[0].title
 
         });
-        console.log(data)
+
     })
 
 });
